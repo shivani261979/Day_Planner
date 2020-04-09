@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Planner</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="dayPlanner.css">
+</head>
+<body>
+    <div class="calendar">
+        <div class="dateContainer">
+            <div class="row p-0 m-0">
+                <div class="col-sm-1 m-0 p-0">
+                    <div class="previousDate"> <button id="previousDate" onclick="showPreviousDate()"> &lt; </button> </div> 
+                </div>
+                <div class="col-sm-10 m-0 p-0">
+                    <div id="showingDate">
+                        Friday, April 11, 2020
+                    </div>
+                </div>
+                <div class="col-sm-1 m-0 p-0">
+                    <div class="nextDate"> <button id="nextDate"  onclick="showNextDate()">  &gt; </button> </div>
+                </div>
+            </div>
+        </div>
+        <div class="singlePage">
+            <ul id="day-planner">
+                <li class="hourly-slot">
+                    <div class="row p-0 m-0">
+                        <div class="col-sm-2 m-0 p-0">
+                            <div class="09 timeslot">09:00 AM</div> 
+                        </div>
+                        <div class="col-sm-9 m-0  p-0">
+                            <div class="09 event"> <textarea id="09_ta"> </textarea> </div>
+                        </div>
+                        <div class="col-sm-1 m-0  p-0">
+                            <button class="09 saveButton btn btn-primary" onclick="saveEvent(this)" style="background: url(./Assets/saveBlack.png) center no-repeat; background-size: 40% 50%; background-color: rgb(30, 100, 245);"></button>
+                        </div>
+                    </div>
+                </li>
+                <li class="hourly-slot">
+                    <div class="row p-0 m-0">
+                        <div class="col-sm-2 m-0 p-0">
+                            <div class="timeslot">10:00 AM</div> 
+                        </div>
+                        <div class="col-sm-9 m-0  p-0">
+                            <div class="10 event"> <textarea id="10_ta"></textarea> </div>
+                        </div>
+                        <div class="col-sm-1 m-0  p-0">
+                            <button class="10 saveButton btn btn-primary" onclick="saveEvent(this)" style="background: url(./Assets/saveBlack.png) center no-repeat; background-size: 40% 50%; background-color: rgb(30, 100, 245);"></button>
+                        </div>
+                    </div>
+                </li>
+                <li class="hourly-slot">
+                    <div class="row p-0 m-0">
+                        <div class="col-sm-2 m-0 p-0">
+                            <div class="timeslot">11:00 AM</div> 
+                        </div>
+                        <div class="col-sm-9 m-0  p-0">
+                            <div class="11 event"> <textarea id="11_ta"></textarea> </div>
+                        </div>
+                        <div class="col-sm-1 m-0  p-0">
+                            <button class="11 saveButton btn btn-primary" onclick="saveEvent(this)" style="background: url(./Assets/saveBlack.png) center no-repeat; background-size: 40% 50%; background-color: rgb(30, 100, 245);"></button>
+                        </div>
+                    </div>
+                </li>
+                <li class="hourly-slot">
+                    <div class="row p-0 m-0">
+                        <div class="col-sm-2 m-0 p-0">
+                            <div class="timeslot">12:00 PM</div> 
+                        </div>
+                        <div class="col-sm-9 m-0  p-0">
+                            <div class="12 event"> <textarea id="12_ta"></textarea> </div>
+                        </div>
+                        <div class="col-sm-1 m-0  p-0">
+                            <button class="12 saveButton btn btn-primary" onclick="saveEvent(this)" style="background: url(./Assets/saveBlack.png) center no-repeat; background-size: 40% 50%; background-color: rgb(30, 100, 245);"></button>
+                        </div>
+                    </div>
+                </li>
+                <li class="hourly-slot">
+                    <div class="row p-0 m-0">
+                        <div class="col-sm-2 m-0 p-0">
+                            <div class="timeslot">01:00 PM</div>
+                        </div>
+                        <div class="col-sm-9 m-0  p-0">
+                            <div class="13 event"> <textarea id="13_ta"></textarea> </div>
+                        </div>
+                        <div class="col-sm-1 m-0  p-0">
+                            <button class="13 saveButton btn btn-primary" onclick="saveEvent(this)" style="background: url(./Assets/saveBlack.png) center no-repeat; background-size: 40% 50%; background-color: rgb(30, 100, 245);"></button>
+                        </div>
+                    </div>
+                </li>
+                <li class="hourly-slot">
+                    <div class="row p-0 m-0">
+                        <div class="col-sm-2 m-0 p-0">
+                            <div class="timeslot">02:00 PM</div> 
+                        </div>
+                        <div class="col-sm-9 m-0  p-0">
+                            <div class="14 event"> <textarea id="14_ta"></textarea> </div>
+                        </div>
+                        <div class="col-sm-1 m-0  p-0">
+                            <button class="14 saveButton btn btn-primary" onclick="saveEvent(this)" style="background: url(./Assets/saveBlack.png) center no-repeat; background-size: 40% 50%; background-color: rgb(30, 100, 245);"></button>
+                        </div>
+                    </div>
+                </li>
+                <li class="hourly-slot">
+                    <div class="row p-0 m-0">
+                        <div class="col-sm-2 m-0 p-0">
+                            <div class="timeslot">03:00 PM</div> 
+                        </div>
+                        <div class="col-sm-9 m-0  p-0">
+                            <div class="15 event"> <textarea id="15_ta"></textarea> </div>
+                        </div>
+                        <div class="col-sm-1 m-0  p-0">
+                            <button class="15 saveButton btn btn-primary" onclick="saveEvent(this)" style="background: url(./Assets/saveBlack.png) center no-repeat; background-size: 40% 50%; background-color: rgb(30, 100, 245);"></button>
+                        </div>
+                    </div>
+                </li>
+                <li class="hourly-slot">
+                    <div class="row p-0 m-0">
+                        <div class="col-sm-2 m-0 p-0">
+                            <div class="timeslot">04:00 PM</div> 
+                        </div>
+                        <div class="col-sm-9 m-0  p-0">
+                            <div class="16 event"> <textarea id="16_ta"></textarea> </div>
+                        </div>
+                        <div class="col-sm-1 m-0  p-0">
+                            <button class="16 saveButton btn btn-primary" onclick="saveEvent(this)" style="background: url(./Assets/saveBlack.png) center no-repeat; background-size: 40% 50%; background-color: rgb(30, 100, 245);"></button>
+                        </div>
+                    </div>
+                </li>
+                <li class="hourly-slot">
+                    <div class="row p-0 m-0">
+                        <div class="col-sm-2 m-0 p-0">
+                            <div class="timeslot">05:00 PM</div> 
+                        </div>
+                        <div class="col-sm-9 m-0  p-0">
+                            <div class="17 event"> <textarea id="17_ta"></textarea> </div>
+                        </div>
+                        <div class="col-sm-1 m-0  p-0">
+                            <button class="17 saveButton btn btn-primary" onclick="saveEvent(this)" style="background: url(./Assets/saveBlack.png) center no-repeat; background-size: 40% 50%; background-color: rgb(30, 100, 245);"></button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="floating-message">
+            
+        </div>
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    
+    <script async src="dayPlanner.js"></script>
+
+<body>
+    
